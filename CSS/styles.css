@@ -8,6 +8,11 @@
 
 html {
     font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 body{
@@ -23,13 +28,24 @@ body{
     }
 }
 
-.titulo {
-    text-align: center;
+.titulo span{
+    font-size: 2rem;
+}
+
+h1{
     font-size: 3.8rem;
 }
 
-.titulo span{
-    font-size: 2rem;
+h2{
+    font-size: 2.8rem;
+}
+
+h3{
+    font-size: 1.8rem;
+}
+
+h1, h2, h3{
+    text-align: center;
 }
 
 .nav-bg{
@@ -59,4 +75,54 @@ body{
 .navegacion-principal a:hover{
     background-color: var(--primario);
     color: var(--oscuro);
+}
+
+/*Hero*/
+
+.hero{
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    position: relative;
+}
+
+.contenedor-hero{
+    position: absolute;
+    background-color: rgba(0, 0, 0, .7);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-hero h2, .contenedor-hero p {
+    color: var(--blanco);
+}
+
+.ubicacion{
+    display: flex;
+    align-items: flex-end;
+}
+
+.boton{
+    background-color: var(--secundario);
+    text-decoration: none;
+    padding: 1rem 3rem;
+    border-radius: .5rem;
+    color: var(--blanco);
+    margin-top: 3rem;
+    font-weight: bold;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    width: 90%;
+}
+
+@media (min-width: 769px) {
+    .boton{
+        width: auto;
+    }
 }
