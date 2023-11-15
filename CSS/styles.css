@@ -1,3 +1,4 @@
+/*Paleta de colores para mas facilidad*/
 :root{
     --blanco:#ffffff;
     --oscuro:#212121;
@@ -8,18 +9,32 @@
 }
 
 html {
-    font-size: 62.5%;
-    box-sizing: border-box;
+    font-size: 62.5%; /*Pone el tamaño de letra a todo el documento*/
+    box-sizing: border-box; /*Hack para el Box Model*/
     background: rgb(2,0,36);
-    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%); /*Coloca un color de fondo a todo el documento*/
+    scroll-snap-type: y mandatory; 
 }
 
+
+/*Scroll Snap*/
+
+.titulo,
+.servicios-heading,
+.contacto-heading{
+    scroll-snap-align: start; /*Indica el punto en el contenedor de desplazamiento al que
+    debe ajustarse el contenido*/
+    scroll-snap-stop: always; /* Controla si el desplazamiento debe detenerse siempre en
+    los puntos de ajuste */
+}
+
+/*Hack para el Box Model*/
 *, *:before, *:after {
     box-sizing: inherit;
 }
 
 body{
-    font-size: 16px;
+    font-size: 16px; /*1rem = 10px*/
     font-family: 'Krub', sans-serif;
 }
 
@@ -30,15 +45,11 @@ body{
 -webkit-box-shadow: 0px 0px 15px 0px rgba(112,112,112,0.75);
 -moz-box-shadow: 0px 0px 15px 0px rgba(112,112,112,0.75);
     background-color: var(--blanco);
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 1rem;
 }
 
-/*Diseño Titulo*/
-
-.titulo span{
-    font-size: 2rem;
-}
+/*Tipografias*/
 
 h1{
     font-size: 3.8rem;
@@ -56,53 +67,62 @@ h1, h2, h3{
     text-align: center;
 }
 
-/*Diseño barra de navegacion*/
 
-.nav-bg{
-    background-color: var(--secundario);
+/*Diseño Titulo*/
+
+.titulo span{
+    font-size: 2rem; /*Tamaño del titulo*/
 }
 
 .contenedor{
-    max-width: 120rem;
+    max-width: 120rem; /*Evita que la pagina se haga mas grande que lo definido*/
     margin:0 auto;
+}
+
+/*Diseño barra de navegacion*/
+
+.nav-bg{
+    background-color: var(--secundario); /*Cambia el color del fondo*/
 }
 
 .navegacion-principal{
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    font-weight: bold;
+    flex-direction: column; /*Coloca los elementos en columnas*/
+    justify-content: space-between; /*Abarca todo el espacio posible*/
+    font-weight: bold; /*Pone en Negritas el texto*/
     font-size: 2rem;
-    align-items: center;
+    align-items: center; /*Alinea los items al centro*/
 }
 
 .navegacion-principal a{
     padding: 1rem;
-    color: var(--blanco);
-    text-decoration: none;
+    color: var(--blanco); /*Cambia el color de la letra a Blanco*/
+    text-decoration: none; /*Elimina la linea de debajo del texto*/
 }
 
 .navegacion-principal a:hover{
-    background-color: var(--primario);
-    color: var(--oscuro);
+    background-color: var(--primario); /*Coloca el fondo del color que tengas en esa variante*/
+    color: var(--oscuro); /*Cambia el color de la letra*/
 }
 
 /*Hero*/
 
 .hero{
-    background-image: url(../img/hero.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 450px;
-    position: relative;
+    background-image: url(../img/hero.jpg); /*../ te saca de la carpeta que estas*/
+    background-repeat: no-repeat; /*Evita que la imagen se repita al agrandar la ventana*/
+    background-size: cover; /*Cubre todo con la imagen*/
+    height: 450px; /*ALtura*/
+    position: relative; /*Posicion, el padre siempre es Relative*/
     margin-bottom: 2rem;
 }
 
 .contenedor-hero{
-    position: absolute;
-    background-color: rgba(0, 0, 0, .7);
-    width: 100%;
-    height: 100%;
+    position: absolute; /*Posicion, el hijo siempre es Absolute*/
+    background-color: rgba(0, 0, 0, .7); /*.7 es el valor de la transparencia*/
+    width: 100%; /*El efecto abarcara todo el ancho*/
+    height: 100%; /*El efecto abarcara todo lo largo*/
+
+    /*Alinear la imagen*/
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -110,26 +130,130 @@ h1, h2, h3{
 }
 
 .contenedor-hero h2, .contenedor-hero p {
-    color: var(--blanco);
+    color: var(--blanco); /*Coloca el color del texto en Blanco*/
 }
 
 .ubicacion{
     display: flex;
-    align-items: flex-end;
+    align-items: flex-end; /*Alinea el texto al final abajo*/
 }
 
 .boton{
-    background-color: var(--secundario);
-    text-decoration: none;
-    padding: 1rem 3rem;
-    border-radius: .5rem;
-    color: var(--blanco);
-    margin-top: 3rem;
-    font-weight: bold;
-    font-size: 2rem;
-    text-transform: uppercase;
+    background-color: var(--secundario); /*Color al boton*/
+    text-decoration: none; /*Elimina la linea de debajo*/
+    padding: 1rem 3rem; /*Se ajusta el tamaño del Padding*/
+    border-radius: .5rem; /*Redondea los bordes*/
+    color: var(--blanco); /*Cambia el color del texto*/
+    margin-top: 3rem; /*Crea un Margin en la parte de arriba del elemento*/
+    font-weight: bold; /*Coloca en Negritas el texto*/
+    font-size: 2rem; /*Se ajusta el tamaño de la letra*/
+    text-transform: uppercase; /*Hack para color el texto en MAYUSCULAS*/
+    text-align: center; /*Alinea al centro*/
+    width: 90%; /*Ajusta el boton al ancho de la pagina (Responsive)*/
+    border: none; /*Elimina el borde*/
+}
+
+.boton:hover{
+    cursor: pointer; /*Añade la manita*/
+}
+
+.servicio{
+    display: flex;
+    flex-direction: column; /*Coloca en columna los elemntos (Responsive)*/
+    text-align: center; /*Alinea al centro los elementos*/
+    align-items: center;
+}
+
+.servicio h3{
+    color: var(--secundario); /*Cambia el color del texto*/
+    font-weight: normal; /*Le quita las negritas al resto del Texto (h3)*/
+}
+
+.servicio p{
+    line-height: 2; /*Añade un interlineado*/
+    text-align: center; /*Alinea al centro*/
+}
+
+.servicio .iconos{ /*Creamos el circulo*/
+    /*Ajusta el tamaño*/
+    height: 15rem;
+    width: 15rem;
+
+    background-color: var(--primario); /*Crea un rectangulo del color*/
+    border-radius: 50%; /*Redondea los bordes para crear el circulo*/
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/*Formulario*/
+
+.formulario{
+    background-color: var(--gris);
+    width: min(60rem, 100%); /*Ahora MQ*/
+    margin-top: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Usarlo si el padre no es un display flex (siendo así se usaría el justify-content, el formulario tiene block por defaulf */
+}
+
+.formulario fieldset{
+    border: none; /*Elimina el borde*/
+}
+
+.formulario legend{
+    text-align: center; /*Alinea al centro el texto*/
+    font-size: 1.8rem; /*Ajusta el tamaño de letra*/
+    font-weight: bold; /*Cola el texto en negritas*/
+    margin-bottom: 2rem; /*Crea un margen por abajo*/
+    text-transform: uppercase; /*Coloca el texto en MAYUSCULAS*/
+    color: var(--primario); /*Cambia el color del texto*/
+    align-items: center; /*Alinea al centro los elementos*/
+}
+
+/*Diseño al formulario*/
+.campo{
+    margin-bottom: 1rem; /*Crea un margen por abajo*/
+}
+
+.campo label{
+    color: var(--blanco); /*Cambia el color del texto*/
+    font-weight: bold; /*Coloca el texto en Negritas*/
+    margin-bottom: .5rem; /*Crea un margen por abajo*/
+    display: block; /*Coloca cada elemento en su sitio disponible*/
+}
+
+.input-text{
+    width: 100%; /*Pone el ancho al 100%*/
+    border: none; /*Elimina los bordes*/
+    padding: 1.5rem;
+    border-radius: .5rem; /*Redondea los bordes*/
+}
+
+.campo textarea{
+    height: 20rem; /*Agranda la altura*/
+}
+
+
+
+.w-sm-100{
+    width: 100%;
+}
+
+.flex{
+    display: flex;
+}
+
+.alinear-derecha{
+    justify-content: flex-end;
+}
+
+.footer{
     text-align: center;
-    width: 90%;
 }
 
 /*Diseño Responsive*/
@@ -137,43 +261,32 @@ h1, h2, h3{
 @media(min-width: 768px){
     body {
         .navegacion-principal{
-            flex-direction: row;
+            flex-direction: row; /*Coloca los elemntos de la navegacion en fila*/
         }
     }
 
     .servicios {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        column-gap: 1rem;
+        grid-template-columns: repeat(3, 1fr); /*Crea 1 fila y 3 columnas para ajustar los elementos*/
+        column-gap: 1rem; /*Engorda el elemento*/
     }
 
     .boton{
+        width: auto; /*Ajusta el tamaño del boton*/
+    }
+
+    .w-sm-100{
         width: auto;
     }
-}
 
-.servicio{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
+    .contenedor-campos{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 1rem;
+        grid-template-rows: auto auto 20rem; /*Da espacio a cada fila*/
+    }
 
-.servicio h3{
-    color: var(--secundario);
-    font-weight: normal;
-}
-
-.servicio p{
-    line-height: 2;
-    text-align: center;
-}
-
-.servicio .iconos{
-    height: 15rem;
-    width: 15rem;
-    background-color: var(--primario);
-    border-radius: 50%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    .campo:nth-child(3), .campo:nth-child(4){
+        grid-column: 1/3; /* Para posicionar el elemento, "que vaya de la columna 1 a la 3*/
+    }
 }
