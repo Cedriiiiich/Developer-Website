@@ -38,7 +38,7 @@
                         </svg>
                         <p>Mérida, Yucatán</p>
                     </div>
-                <a class="boton" href="">Contactar</a>
+                <a class="boton" href="#cntcto">Contactar</a>
             </div>
         </section>
     <main class="contenedor sombra">
@@ -97,43 +97,45 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod doloremque beatae ea dicta a, eos explicabo ratione vitae quaerat ab praesentium molestias sunt quibusdam vel atque odio asperiores voluptatum quia.</p>    
             </section>   
             </div>  
-                <h2 class="contacto-heading">Contacto</h2>
-            <form class="formulario">
-                <fieldset>
-                    <legend>
-                        LLENA TUS DATOS PARA ESTABLECER CONTACTO
-                    </legend>
-                    <div class="contenedor-campos">
-                        <div class="campo">
-                            <label>
-                                Nombre
-                            </label>
-                            <input type="text" placeholder="Tu Nombre"> 
+                <h2 class="contacto-heading" id="cntcto">Contacto</h2>
+                <form class="formulario" action="https://formsubmit.co/ledrickon22@gmail.com" method="POST">
+                    <fieldset>
+                        <legend>
+                            LLENA TUS DATOS PARA ESTABLECER CONTACTO
+                        </legend>
+                        <div class="contenedor-campos">
+                            <div class="campo">
+                                <label for="name">
+                                    Nombre
+                                </label>
+                                <input type="text" name="name" id="name" placeholder="Tu nombre"> 
+                            </div>
+                            <div class="campo">
+                                <label for="phone">
+                                Teléfono
+                                </label>
+                                <input type="tel" name="phone" id="phone" placeholder="Tu teléfono">
+                            </div>
+                            <div class="campo">
+                                <label for="email">
+                                    Correo
+                                </label>
+                                <input type="email" name="email" id="email" placeholder="Tu correo">
+                            </div>
+                            <div class="campo">
+                                <label for="message">
+                                    Mensaje
+                                </label>
+                                <textarea name="message" id="message" placeholder="Tu mensaje"></textarea>
+                            </div>
+                            <input type="hidden" name="_next" value="https://cedrovichdw.netlify.app/" value="https://cedrovich.github.io/Developer-Website/">
+                            <input type="hidden" name="_captcha" value="false">
                         </div>
-                        <div class="campo">
-                            <label>
-                            Teléfono
-                            </label>
-                            <input type="tel" placeholder="Tu teléfono">
+                        <div class="alinear-derecha flex">
+                            <input class="boton w-sm-100" type="submit" value="Enviar"/>
                         </div>
-                        <div class="campo">
-                            <label>
-                                Correo
-                            </label>
-                            <input type="email" placeholder="Tu correo">
-                        </div>
-                        <div class="campo">
-                            <label>
-                                Mensaje
-                            </label>
-                            <textarea></textarea>
-                        </div>
-                    </div>
-                    <div class="alinear-derecha flex">
-                        <input class="boton w-sm-100" type="submit" value="Enviar"/>
-                    </div>
-                </fieldset>
-            </form>
+                    </fieldset>
+                </form>
     </main>
             <footer class="footer">
                 <p>Todos los derechos reservados © Edrick León</p>

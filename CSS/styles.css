@@ -19,14 +19,17 @@ html {
 
 /*Scroll Snap*/
 
+/*
 .titulo,
 .servicios-heading,
 .contacto-heading{
     scroll-snap-align: start; /*Indica el punto en el contenedor de desplazamiento al que
-    debe ajustarse el contenido*/
+    debe ajustarse el contenido
     scroll-snap-stop: always; /* Controla si el desplazamiento debe detenerse siempre en
-    los puntos de ajuste */
+    los puntos de ajuste 
 }
+
+*/
 
 /*Hack para el Box Model*/
 *, *:before, *:after {
@@ -155,6 +158,8 @@ h1, h2, h3{
 
 .boton:hover{
     cursor: pointer; /*Añade la manita*/
+    background-color: var(--primario);
+    color: var(--oscuro);
 }
 
 .servicio{
@@ -236,6 +241,7 @@ h1, h2, h3{
 
 .campo textarea{
     height: 20rem; /*Agranda la altura*/
+    resize: none;
 }
 
 
