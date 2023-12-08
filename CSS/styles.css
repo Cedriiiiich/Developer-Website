@@ -158,6 +158,9 @@ h1, h2, h3{
 
 .boton:hover{
     cursor: pointer; /*Añade la manita*/
+}
+
+.boton:active{
     background-color: var(--primario);
     color: var(--oscuro);
 }
